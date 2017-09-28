@@ -1,0 +1,6 @@
+demjson
+Flask
+gunicorn
+redis
+requests
+gevent
