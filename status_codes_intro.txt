@@ -1,0 +1,111 @@
+task_id相关：
+    爬取任务推送成功：
+        {
+          "code": "00000",
+          "msg": "success",
+          "timestamp": "2017-08-04 11:21:58"
+        }
+    爬取任务推送失败：
+        {
+          "code": "90403",
+          "msg": "bad secret",
+          "timestamp": "2017-08-04 11:43:02"
+        }
+        {
+          "code": "90403",
+          "msg": "no task_id",
+          "timestamp": "2017-08-04 11:44:09"
+        }
+        {
+          "code": "90403",
+          "msg": "invalid task_id",
+          "timestamp": "2017-08-04 11:44:49"
+        }
+        {
+          "code": "90403",
+          "msg": "duplicate task_id",
+          "timestamp": "2017-08-04 11:46:37"
+        }
+        {
+          "code": "90404",
+          "msg": "bad interface",
+          "timestamp": "2017-08-04 11:45:26"
+        }
+
+result相关：
+    获取结果失败：
+        {
+          "code": "90403",
+          "msg": "bad secret",
+          "timestamp": "2017-08-04 15:27:30"
+        }
+        {
+          "code": "90403",
+          "msg": "no task_id",
+          "timestamp": "2017-08-04 15:28:32"
+        }
+        {
+          "code": "90404",
+          "msg": "invalid task_id",
+          "timestamp": "2017-08-04 15:29:34"
+        }
+
+    获取结果成功，并且有数据：
+        {
+          "code": "00000",
+          "data": [
+            {
+              "ip": "8.8.8.8",
+              "reason": "Drone RBL|InterServer RBL",
+              "risky": true
+            }
+          ],
+          "msg": "success",
+          "status": "SUCCESS",
+          "task_id": "ezbf71c0-77fd-11e7-bc42-1c1b0d471d0e",
+          "timestamp": "2017-08-04 16:44:46"
+        }
+    获取结果成功，但是无数据：
+        {
+          "code": "10001",
+          "data": [
+            {
+              "listed": 0,
+              "mobile": "18670799160",
+              "project": "\u7ea2\u5cad"
+            }
+          ],
+          "msg": "not found",
+          "status": "SUCCESS",
+          "task_id": "ezbf71c0-77fd-11e7-bc42-1c1b0d471d0f",
+          "timestamp": "2017-08-04 16:48:15"
+        }
+    获取结果成功，但是未完成：
+        {
+          "code": "90202",
+          "data": [],
+          "msg": "working",
+          "status": "PENDING",
+          "task_id": "ezbf71c0-77fd-11e7-bc42-1c1b0d471d0g",
+          "timestamp": "2017-08-04 16:50:25"
+        }
+
+    获取成功，但是重试多次失败：
+        {
+          "code": "90503",
+          "data": [],
+          "msg": "exceeds max retry",
+          "status": "ABORT",
+          "task_id": "ezbf71c0-77fd-11e7-bc42-1c1b0d471d0g",
+          "timestamp": "2017-08-04 16:50:25"
+        }
+
+    获取成功，但是服务发生异常：
+        {
+          "code": "90500",
+          "data": [],
+          "msg": "error",
+          "status": "ERROR",
+          "task_id": "ezbf71c0-77fd-11e7-bc42-1c1b0d471d0g",
+          "timestamp": "2017-08-04 16:50:25"
+        }
